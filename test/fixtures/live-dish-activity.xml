@@ -1,0 +1,60 @@
+<dsn>
+<station name="gdscc" friendlyName="Goldstone" timeUTC="0" timeZoneOffset="-7">
+<dish name="DSS14" azimuthAngle="120.5" elevationAngle="40.2" windSpeed="1.1" isMSPA="true" isArray="false" isDDOR="false" activity="MSPA">
+<target name="Europa Clipper" id="-159" uplegRange="-1" downlegRange="-1" rtlt="3200"/>
+<downSignal signalType="data" dataRate="0" frequency="8420000000" power="-148.2" spacecraft="Europa Clipper" spacecraftID="-159" active="true"/>
+<downSignal signalType="carrier" dataRate="0" frequency="8420000000" power="-151.0" spacecraft="Europa Clipper" spacecraftID="-159" active="true"/>
+<upSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="Europa Clipper" spacecraftID="-159" active="false"/>
+</dish>
+<dish name="DSS24" azimuthAngle="10" elevationAngle="20" windSpeed="0" isMSPA="false" isArray="false" isDDOR="false" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS25" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS26" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+</station>
+<station name="cdscc" friendlyName="Canberra" timeUTC="0" timeZoneOffset="10">
+<dish name="DSS34" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="Downlink">
+<target name="Psyche" id="-255" uplegRange="-1" downlegRange="-1" rtlt="1800"/>
+<downSignal signalType="data" dataRate="0" frequency="8440000000" power="-155" spacecraft="Psyche" spacecraftID="-255" active="true"/>
+<upSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="Psyche" spacecraftID="-255" active="false"/>
+</dish>
+<dish name="DSS35" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS36" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS43" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+</station>
+<station name="mdscc" friendlyName="Madrid" timeUTC="0" timeZoneOffset="2">
+<dish name="DSS54" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS55" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS63" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+<dish name="DSS65" azimuthAngle="10" elevationAngle="20" windSpeed="0" activity="">
+<target name="RSTS" id="-1" uplegRange="-1" downlegRange="-1" rtlt="-1"/>
+<downSignal signalType="none" dataRate="-1" frequency="-1" power="-1" spacecraft="RSTS" spacecraftID="-1" active="false"/>
+</dish>
+</station>
+<timestamp>1792080000000</timestamp>
+</dsn>

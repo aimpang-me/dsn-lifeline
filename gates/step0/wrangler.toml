@@ -1,0 +1,23 @@
+name = "step0"
+main = "src/index.js"
+compatibility_date = "2026-10-15"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+
+[observability.traces]
+enabled = true
+
+# Throwaway gate. Do not deploy. A deploy would poll eyes.nasa.gov.
+[[durable_objects.bindings]]
+name = "GATE"
+class_name = "Gate"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Gate"]

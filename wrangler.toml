@@ -1,0 +1,25 @@
+name = "dsn-lifeline"
+main = "src/index.js"
+compatibility_date = "2026-10-15"
+compatibility_flags = ["nodejs_compat"]
+# DEFAULT_TZ is set in the dashboard next to the secrets. This keeps it across deploys.
+keep_vars = true
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+
+[observability.traces]
+enabled = true
+
+# One SQLite Durable Object polls the DSN feed and keeps the alert queue.
+[[durable_objects.bindings]]
+name = "LIFELINE"
+class_name = "Lifeline"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Lifeline"]
