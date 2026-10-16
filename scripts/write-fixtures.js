@@ -38,7 +38,7 @@ const files = {
   "no-stations": buildXml({ timestamp: TS, stationCount: 0, dishCount: 0 }),
   "bad-numbers": buildXml({
     timestamp: TS,
-    dishes: [{ name: "DSS14", signals: [{ dir: "down", dataRate: "nope", spacecraftID: "-231", spacecraft: "SWFO-L1" }] }],
+    dishes: [{ name: "DSS14", signals: [{ dir: "down", spacecraftID: "nope", spacecraft: "SWFO-L1" }] }],
   }),
   "injected-name": buildXml({
     timestamp: TS,

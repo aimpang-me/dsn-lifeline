@@ -133,3 +133,27 @@ test("23000 unterminated timestamp tags parse in well under 100 ms", () => {
 function dishOf(snapshot, spacecraftID) {
   return snapshot.dishes.find((d) => d.signals.some((s) => s.spacecraftID === spacecraftID && s.active))?.name;
 }
+
+test("a non-numeric dataRate on one downSignal nulls that value and keeps the snapshot", () => {
+  const nan = swfoDown({ dish: "DSS23", dataRate: "NaN", spacecraftID: "-143", spacecraft: "TGO" });
+  const xml = buildXml({ timestamp: TS, stationCount: 3, dishCount: 10, dishes: [swfoDown({ dish: "DSS14", dataRate: "10" }), nan] });
+  const parsed = DsnScanner.parse(xml);
+  assert.equal(parsed.ok, true);
+  assert.equal(parsed.snapshot.stationCount, 3);
+  assert.ok(parsed.snapshot.dishCount >= 10);
+  const down = (id) => parsed.snapshot.signals.find((s) => s.spacecraftID === id && s.type === "downlink");
+  assert.equal(down(-143).dataRate, null);
+  assert.equal(down(-143).active, true);
+  assert.equal(down(-231).dataRate, 10);
+  assert.deepEqual([...Talking.codes(parsed.snapshot, CRAFTS)], ["swfo"]);
+});
+
+test("non-numeric frequency and power are tolerated, a non-numeric spacecraftID is still SHAPE", () => {
+  const odd = buildXml({ timestamp: TS, dishes: [{ name: "DSS14", signals: [{ dir: "down", dataRate: "5", frequency: "x", power: "NaN", spacecraftID: "-231" }] }] });
+  const ok = DsnScanner.parse(odd);
+  assert.equal(ok.ok, true);
+  assert.equal(ok.snapshot.signals.find((s) => s.spacecraftID === -231).dataRate, 5);
+  const bad = DsnScanner.parse(buildXml({ timestamp: TS, dishes: [{ name: "DSS14", signals: [{ dir: "down", spacecraftID: "nope" }] }] }));
+  assert.equal(bad.ok, false);
+  assert.equal(bad.reason, "SHAPE");
+});

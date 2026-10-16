@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+A non-numeric `dataRate`, such as `NaN` on one TGO signal, is stored as null instead of discarding the whole snapshot. Frequency and power are no longer read, so they cannot fail a snapshot. A non-numeric `spacecraftID`, target id, or timestamp is still a SHAPE failure.
+
 ## 1.0.1
 
 The Worker default export is a fetch handler object, so Cloudflare serves `/health` and `/mcp`. A class with only a static `fetch` was ignored, and every request returned the platform 404. An unknown protocol version falls back to one the server accepts. A caller without a valid key gets 401 and is not told whether the server is configured. A malformed Content-Length is rejected before the body is buffered. The `serverInfo.version` reported at initialize now matches `package.json`.

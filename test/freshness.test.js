@@ -107,7 +107,7 @@ test("C-F4: six hours without a good snapshot sends exactly one system push", as
 test("C-F5: three shape errors in 60 minutes send exactly one push", async () => {
   const h = createHarness();
   h.life.health.configAt = h.clock.now();
-  h.feed.body = () => buildXml({ timestamp: h.clock.now(), dishes: [{ name: "DSS14", signals: [{ dir: "down", dataRate: "nope", spacecraftID: "-231" }] }] });
+  h.feed.body = () => buildXml({ timestamp: h.clock.now(), dishes: [{ name: "DSS14", signals: [{ dir: "down", spacecraftID: "nope" }] }] });
   for (let i = 0; i < 3; i++) {
     await h.life.alarm();
     h.clock.advance(60_000);
