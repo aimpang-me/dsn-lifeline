@@ -143,10 +143,9 @@ export class DsnScanner {
   onSignal(tag) {
     if (!this.currentDish) return;
     const rate = DsnScanner.parseNum(tag.attrs.dataRate ?? "");
-    const frequency = DsnScanner.parseNum(tag.attrs.frequency ?? "");
-    const power = DsnScanner.parseNum(tag.attrs.power ?? "");
     const id = DsnScanner.parseNum(tag.attrs.spacecraftID ?? tag.attrs.spacecraftId ?? "");
-    if (!rate.ok || !frequency.ok || !power.ok || !id.ok) this.shape = true;
+    // parseNum yields null for a malformed dataRate. Only an unreadable spacecraftID breaks the snapshot.
+    if (!id.ok) this.shape = true;
     const active = tag.attrs.active != null
       ? tag.attrs.active === "true"
       : tag.attrs.signalType === "data" || tag.attrs.signalType === "carrier";
